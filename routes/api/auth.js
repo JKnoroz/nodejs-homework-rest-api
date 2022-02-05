@@ -27,6 +27,7 @@ router.post("/register", async (req, res, next) => {
     res.status(201).json({
       user: {
         email,
+        subscription: "starter",
       },
     });
   } catch (error) {
@@ -61,6 +62,7 @@ router.post("/login", async (req, res, next) => {
       token,
       user: {
         email,
+        subscription: user.subscription,
       },
     });
   } catch (error) {
