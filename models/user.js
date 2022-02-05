@@ -37,8 +37,13 @@ const registerJoiSchema = Joi.object({
 
 const User = model("user", userSchema);
 
+const updateUserJoiSchema = Joi.object({
+  subscription: Joi.string().valid("starter", "pro", "business").required(),
+});
+
 const schemas = {
   register: registerJoiSchema,
+  update: updateUserJoiSchema,
 };
 
 module.exports = {
