@@ -3,7 +3,7 @@ const router = express.Router();
 const CreateError = require("http-errors");
 
 const { User } = require("../../models/user");
-const { authenticate } = require("../../middlewares");
+const { authenticate, upload } = require("../../middlewares");
 const { schemas } = require("../../models/user");
 
 router.get("/current", authenticate, async (req, res, next) => {
@@ -36,5 +36,12 @@ router.patch("/updatesubscription", authenticate, async (req, res, next) => {
     next(error);
   }
 });
+
+router.patch(
+  "/avatars",
+  authenticate,
+  upload.single("avatar"),
+  async (req, res, next) => {}
+);
 
 module.exports = router;
