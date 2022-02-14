@@ -54,8 +54,8 @@ router.patch(
         .then((image) => {
           return image.resize(250, 250).write(tempUpload);
         })
-        .catch((err) => {
-          console.error(err);
+        .catch((error) => {
+          console.error(error);
         });
 
       const [extention] = filename.split(".").reverse();
