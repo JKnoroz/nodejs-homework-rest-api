@@ -37,7 +37,7 @@ router.post("/register", async (req, res, next) => {
     const mail = {
       to: email,
       subject: "Подтвеждение email",
-      html: `<a target="_blank" href='http://localhost:3000/api/users/${verificationToken}'>Нажмите чтобы подтвердить свой email</a>`,
+      html: `<a target="_blank" href='http://localhost:3000/api/users/verify/${verificationToken}'>Нажмите чтобы подтвердить свой email</a>`,
     };
     await sendMail(mail);
     res.status(201).json({

@@ -4,7 +4,6 @@ const CreateError = require("http-errors");
 const fs = require("fs/promises");
 const path = require("path");
 const Jimp = require("jimp");
-const Joi = require("joi");
 
 const { User, schemas } = require("../../models/user");
 const { authenticate, upload } = require("../../middlewares");
